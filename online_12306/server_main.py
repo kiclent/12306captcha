@@ -9,7 +9,7 @@ test by: Python 3.6, Tensorflow 1.7.1
 3、验证码物体模型，用于识别验证码需要识别的物体，共3个文件分别是 yyy.data-00000-of-00001, yyy.meta, yyy.index
 '''
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '3' # 指定GPU（如果有需要）
+os.environ['CUDA_VISIBLE_DEVICES'] = '3' # 指定GPU（如果有需要） 
 import numpy as np
 from server_model import CaptchaModel
 from time import time as tc
