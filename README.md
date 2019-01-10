@@ -13,9 +13,18 @@ Flask 1.0.2
 # 自动抢票功能使用
 1. 安装相关环境, 运行./online_12306/servermain.py 启动验证码服务程序
 
-2. 将GetRandCode.py 替换自动抢票程序（https://github.com/testerSunshine/12306）中的 ./inter/GetRandCode.py
+2. 将GetRandCode.py 替换自动抢票程序（https://github.com/testerSunshine/12306 )中的 ./inter/GetRandCode.py
 
 3. 运行抢票程序 
 
+
+# 说明
+1. 测试总体的准确率在75% - 85% 之间
+2. online/log下面保存了每次请求的验证码识别结果
+3. 可在server_main.py中修改服务程序的端口号
+4. 如果需要将服务程序部署到服务器，需要修改两个项目间验证码的传输方式（GetRandCode.py程序和server_main.py），感兴趣的请自行探索
+5. 有问题的话欢迎大家 Issue 或者 E-mail: kiclent@yahoo.com
+6. 最后，感谢自动抢票程序作者送我回家， 祝大家好运 ^_^
+
 # 声明
-本程序只是对12306验证码识别技术研究，不准用于商业活动。
+本程序只是对12306验证码识别技术研究，不准作商业用途。
