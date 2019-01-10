@@ -19,7 +19,7 @@ Flask 1.0.2
 
 
 # 说明
-1. 测试总体的准确率在75% - 85% 之间
+1. 测试总体的准确率在75% - 85% 之间，识别速度 10fps (CPU only, MacBook Pro Intel Core i5)
 2. online/log下面保存了每次请求的验证码识别结果
 3. 可在server_main.py中修改服务程序的端口号
 4. 如果需要将服务程序部署到服务器，需要修改两个项目间验证码的传输方式（GetRandCode.py程序和server_main.py），感兴趣的请自行探索
