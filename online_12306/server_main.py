@@ -18,7 +18,7 @@ import shutil
 
 # 读取类别编号映射类别文件，将模型识别出来的编号还原为类别
 def read_classes(classes_file):
-    with open(classes_file) as fp:
+    with open(classes_file, mode='r', encoding='utf-8') as fp:
         classes = [ c.strip() for c in fp.readlines()]
     return np.array(classes)
 
