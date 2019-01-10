@@ -31,7 +31,7 @@ def getRandCode(is_auto_code, auto_code_type, result):
     识别验证码
     :return: 坐标
     """
-    imgPath = os.path.abspath('./tkcode')
+    imgPath = os.path.abspath('./tkcode.png')
     try:
         if is_auto_code:
             Result = rk_create(imgPath)
