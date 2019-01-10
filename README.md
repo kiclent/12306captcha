@@ -6,9 +6,10 @@
 配合项目：https://github.com/testerSunshine/12306 可以实现自动抢票
 
 # 测试环境
-Python 3.6
-Tensorflow 1.7.1
-Flask 1.0.2
+1. Python 3.6
+2. Tensorflow 1.7.1
+3. Flask 1.0.2
+4. opencv-python 3.4.2.17 
 
 # 自动抢票功能使用
 1. 安装相关环境, 运行./online_12306/servermain.py 启动验证码服务程序
@@ -16,6 +17,8 @@ Flask 1.0.2
 2. 将GetRandCode.py 替换自动抢票程序（https://github.com/testerSunshine/12306 )中的 ./inter/GetRandCode.py
 
 3. 运行抢票程序 
+
+注意：本程序运行在python3环境下， 自动抢票程序运行python2环境，因此安装环境和运行程序都需要格外注意
 
 
 # 说明
