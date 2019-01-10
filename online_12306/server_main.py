@@ -80,5 +80,5 @@ if __name__ == "__main__":
 
 '''
 测试
-curl -H "Content-Type:application/{"imgPath":"/Users/phoenix/program/12306captcha/data/12306/2.jpg"}" http://0.0.0.0:8080/frame
+curl -H "Content-Type:application/json" -X POST -d '{"imgPath":"/Users/phoenix/program/12306captcha/data/12306/2.jpg"}' http://0.0.0.0:8080/frame
 '''
