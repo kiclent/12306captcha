@@ -6,10 +6,11 @@
 <BR>本项目配合自动抢票程序：https://github.com/testerSunshine/12306 可以实现自动抢票
 
 # 测试环境
-1. Python 3.6
-2. Tensorflow 1.7.1（使用GPU加速则安装: tensorflow-gpu ）
-3. Flask 1.0.2
-4. opencv-python 3.4.2.17 
+ - Python 3.6
+ - Tensorflow 1.7.1（使用GPU加速则安装: tensorflow-gpu ）
+ - Flask 1.0.2
+ - numpy 1.14.3 
+ - opencv-python 3.4.2.17 
 
 # 自动抢票功能使用
 1. 安装相应环境依赖包, 运行./online_12306/servermain.py 启动验证码服务程序 (windows用户需要将里面的 ip 改为 127.0.0.1)
