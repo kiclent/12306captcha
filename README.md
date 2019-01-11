@@ -12,9 +12,9 @@
 4. opencv-python 3.4.2.17 
 
 # 自动抢票功能使用
-1. 安装相关环境, 运行./online_12306/servermain.py 启动验证码服务程序
+1. 安装相关环境, 运行./online_12306/servermain.py 启动验证码服务程序 (windows 需要将里面的 ip 改为 127.0.0.1)
 
-2. 将GetRandCode.py 替换自动抢票程序（https://github.com/testerSunshine/12306 )中的 ./inter/GetRandCode.py
+2. 将GetRandCode.py 替换自动抢票程序（https://github.com/testerSunshine/12306 )中的 ./inter/GetRandCode.py  (windows 需要将里面的 ip 改为 127.0.0.1)
 
 3. 运行自动抢票程序
 
