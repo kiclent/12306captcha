@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 '''
 12306 captcha recognize
 kiclent@yahoo.com
