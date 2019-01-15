@@ -6,7 +6,7 @@ test by: Python 3.6, Tensorflow 1.7.1
 '''
 import numpy as np
 import tensorflow as tf
-import cv2
+from PIL import Image
 
 class CaptchaModel(object):
     def __init__(self, ocr_model_meta, ocr_model_para, cap_model_meta, cap_model_para):
@@ -60,11 +60,12 @@ class CaptchaModel(object):
         return imgs, img_word
 
     def get_test_image(self, image_path):
-        im = cv2.imread(image_path)
+        # im = cv2.imread(image_path)
+        im = Image.open(image_path)
         im = np.array(im, np.float32)
         if len(im.shape) < 3:
             im = np.stack((im, im, im), axis=2)
-        im = im[:, :, [2, 1, 0]]
+        # im = im[:, :, [2, 1, 0]]
         im = im * 2.0 / 255 - 1
 
         imgs, img_word = self.captcha_to_patch(im)

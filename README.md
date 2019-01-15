@@ -10,14 +10,14 @@
  - Tensorflow 1.7.1（使用GPU加速则安装: tensorflow-gpu ）
  - Flask 1.0.2
  - numpy 1.14.3 
- - opencv-python 3.4.2.17 
+ - Pillow 5.1.0 
 
 # 自动抢票功能使用
 1. 安装相应环境依赖包, 运行./online_12306/servermain.py 启动验证码服务程序 (windows用户需要将里面的 ip 改为 127.0.0.1)
 
 2. 将 GetRandCode.py 替换自动抢票程序（https://github.com/testerSunshine/12306 )中的 ./inter/GetRandCode.py  (windows 用户需要将里面的 ip 改为 127.0.0.1)
 
-3. 运行自动抢票程序
+3. 运行自动抢票程序(参考原项目说明)
 
 4. 验证码程序会将每次识别结果保存在 ./online_12306/logs 下面，识别结果文件命名格式为[timestamp_文字内容_选项1_[选项2]]，如 "20190101000000_红枣_1_3_7.png" 表示本次验证码识别到文字内容为红枣，对应图片是第1、3、7张.
 
