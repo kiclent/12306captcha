@@ -15,14 +15,12 @@ def rk_create(imgPath):
         'User-Agent': 'ben',
         "Content - Type": "application/json",
     }
-    # headers = {
-    #     "Content - Type": "application/json",
-    #     "Accept": "*/*"
-    # }
-    params = {
-        'imgPath': imgPath,
+
+    file ={
+        'image': open('tkcode.png', 'rb').read()
     }
-    r = requests.post('http://0.0.0.0:8080/frame', json=params)
+
+    r = requests.post('http://0.0.0.0:8080/frame', files=file)
     print(r)
     return r.json()
 

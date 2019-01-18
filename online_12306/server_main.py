@@ -16,6 +16,7 @@ from server_model import CaptchaModel
 from time import time as tc
 import time
 import shutil
+from PIL import Image
 
 # 读取类别编号映射类别文件，将模型识别出来的编号还原为类别
 def read_classes(classes_file):
@@ -49,17 +50,17 @@ from flask import request, Flask
 import json
 
 app = Flask(__name__)
-@app.route("/frame", methods=['POST', 'GET'])
+@app.route("/frame", methods=['POST'])
 def get_frame():
     tic = tc()
     print('----------------------------------------------------------------')
     log_time = time.strftime('%Y-%m-%d %H:%M:%S')
     print(log_time)
-    res = request.json
-    print(request.query_string)
-    img_path = res['imgPath']
-    print(img_path)
-    word_ind, objs_ind = model.predict(img_path)
+
+    cap_file = request.files['image']
+    cap_img = Image.open(cap_file)
+    word_ind, objs_ind = model.predict(cap_img)
+
     Result={'Result':[]}
     for i, ind in enumerate(objs_ind):
         if ind == word_ind[0]:
@@ -67,10 +68,10 @@ def get_frame():
     if Result['Result'].__len__() <= 0:
         Result['Result'].append(np.random.randint(1, 9))
     print(classes[word_ind[0]], Result['Result'])
+
     pic = log_time.replace(' ', '').replace('-', '').replace(':', '') + '_' +classes[word_ind[0]] + '_' + '_'.join([str(v) for v in Result['Result']]) + '.png'
     print(pic)
-    shutil.copyfile(img_path, os.path.join(logdir, pic))
-
+    cap_img.save(os.path.join(logdir, pic))
     print('fetch time: {:.5f} s.'.format(tc() - tic))
     print('----------------------------------------------------------------\n')
     return json.dumps(Result)

@@ -13,14 +13,14 @@ class CaptchaModel(object):
         self.sess_ocr, self.tensors_ocr = self.restore_sess(ocr_model_meta, ocr_model_para)
         self.sess_cap, self.tensors_cap = self.restore_sess(cap_model_meta, cap_model_para)
 
-
-    def predict(self, img_path):
-        imgs, img_word = self.get_test_image(img_path)
+    def predict(self, image_pillow):
+        imgs, img_word = self.get_test_image(image_pillow)
 
         word_ind = self.ocr_predict(img_word).reshape(-1)
         objs_ind = self.obj_predict(imgs).reshape(-1)
 
         return word_ind, objs_ind
+
 
     def ocr_predict(self, img_word):
         ocr_feed_dict = {
@@ -59,17 +59,14 @@ class CaptchaModel(object):
 
         return imgs, img_word
 
-    def get_test_image(self, image_path):
-        # im = cv2.imread(image_path)
-        im = Image.open(image_path)
-        im = np.array(im, np.float32)
+
+    def get_test_image(self, image_pillow):
+
+        im = np.array(image_pillow, np.float32)
         if len(im.shape) < 3:
             im = np.stack((im, im, im), axis=2)
-        # im = im[:, :, [2, 1, 0]]
         im = im * 2.0 / 255 - 1
-
         imgs, img_word = self.captcha_to_patch(im)
-
         return imgs, img_word
 
 
