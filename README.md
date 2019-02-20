@@ -27,7 +27,7 @@
 
 
 # 说明
-1. 测试总体的准确率在75% - 85% 之间，识别速度 10fps (CPU only, MacBook Pro Intel Core i5)
+1. 测试总体的准确率在 85% 左右，识别速度 10fps (CPU only, MacBook Pro Intel Core i5)
 
 2. online_12306/log下面保存了每次请求的验证码识别结果（这里没有对保存的图片数量进行限制，需要手动定时清理）
 
